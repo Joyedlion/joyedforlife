@@ -14,7 +14,6 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
     .login-container {
       background-color: #14142b;
@@ -22,7 +21,7 @@
       border-radius: 10px;
       box-shadow: 0 0 20px #00f0ff33;
       text-align: center;
-      width: 300px;
+      width: 320px;
     }
     .login-container h2 {
       margin-bottom: 25px;
@@ -52,7 +51,12 @@
       text-decoration: none;
       font-size: 0.9em;
     }
-    #message {
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    .success {
+      color: #00f0ff;
       margin-top: 10px;
     }
   </style>
@@ -61,8 +65,8 @@
 
   <div class="login-container">
     <h2>Login</h2>
-    <input type="email" placeholder="Email" id="email" />
-    <input type="password" placeholder="Password" id="password" />
+    <input type="email" placeholder="Email" id="email" required />
+    <input type="password" placeholder="Password" id="password" required />
     <input type="submit" value="Login" class="button" onclick="login()" />
     <a class="link" href="./register.html">Don't have an account? Register</a>
     <a class="link" href="/index.html">Go Back Home</a>
@@ -72,33 +76,29 @@
   <script>
     const SUPABASE_URL = "https://yuvdmxdpkyrmcqvqryjt.supabase.co";
     const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1dmRteGRwa3lybWNxdnFyeWp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0OTA5MzcsImV4cCI6MjA3MDA2NjkzN30.q8Y7knmHhV94W_f6SQQeynLSL-75B009SoEDpTDYFHw";
+
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     async function login() {
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
       const messageDiv = document.getElementById("message");
-      messageDiv.textContent = "";
+      messageDiv.innerHTML = "";
 
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password
+        email: email,
+        password: password
       });
 
       if (error) {
-        messageDiv.textContent = error.message;
-        messageDiv.style.color = "red";
+        messageDiv.innerHTML = `<div class="error">${error.message}</div>`;
       } else {
-        messageDiv.textContent = "Login successful! Redirecting...";
-        messageDiv.style.color = "#00f0ff";
-
-        // Redirect to home or dashboard
+        messageDiv.innerHTML = `<div class="success">Login successful! Redirecting...</div>`;
         setTimeout(() => {
-          window.location.href = "https://joyedforlife.xyz";
-        }, 1000);
+          window.location.href = "https://joyedforlife.xyz/index.html"; // redirect after login
+        }, 1500);
       }
     }
   </script>
-
 </body>
 </html>
