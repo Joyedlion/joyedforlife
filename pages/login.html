@@ -13,7 +13,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 140vh;
+      height: 100vh;
+      margin: 0;
     }
     .login-container {
       background-color: #14142b;
@@ -65,8 +66,8 @@
 
   <div class="login-container">
     <h2>Login</h2>
-    <input type="email" placeholder="Email" id="email" />
-    <input type="password" placeholder="Password" id="password" />
+    <input type="email" placeholder="Email" id="email" required />
+    <input type="password" placeholder="Password" id="password" required />
     <input type="submit" value="Login" class="button" onclick="login()" />
     <a class="link" href="./register.html">Don't have an account? Register</a>
     <a class="link" href="/index.html">Go Back Home</a>
@@ -94,10 +95,11 @@
       } else {
         messageDiv.innerHTML = `<div class="success">Login successful! Redirecting...</div>`;
         setTimeout(() => {
-          window.location.href = "/index.html"; // Or wherever you want to redirect
-        }, 1000);
+          window.location.href = "/index.html"; // Change if needed
+        }, 1500);
       }
     }
   </script>
+
 </body>
 </html>
