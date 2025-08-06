@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Joyedforlife</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0e0e20;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140vh;
+        }
+        .login container {
+            background-color: #14142b;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00f0ff33;
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #00f0ff;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #00f0ff;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .button:hover {
+            background-color: #00cce5;
+        }
+        .link {
+            margin-top: 15px;
+            display: block;
+            color: #00f0ff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <input type="submit" value="Login" class="button">
+        <a class="link" href="./register.html">Don't Have a Account? Register</a>
+        <a class="link" href="/index.html">Go Back Home</a>
+    </div>
+</body>
+</html>
