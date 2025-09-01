@@ -1,4 +1,4 @@
-lol<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,17 +12,18 @@ lol<!DOCTYPE html>
             box-sizing: border-box;
         }
         img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 100px;
         }
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: #0e0e20;
-            color:white;
-            overflow: hidden;
+            color: white;
         }
 
+        /* Intro animation */
         #intro {
             position: fixed;
             top: 0;
@@ -40,7 +41,7 @@ lol<!DOCTYPE html>
         #orb {
             width: 120px;
             height: 120px;
-            background:radial-gradient(circle, #00e1ff, #ff00b3);
+            background: radial-gradient(circle, #00e1ff, #ff00b3);
             border-radius: 50%;
             box-shadow: 0 0 40px #00f0ff;
             animation: pulse 2s infinite;
@@ -55,7 +56,7 @@ lol<!DOCTYPE html>
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
-            100% { transform: scale (1); }
+            100% { transform: scale(1); }
         }
         @keyframes fadeText {
             to { opacity: 1; }
@@ -63,9 +64,11 @@ lol<!DOCTYPE html>
         @keyframes fadeOut {
             to {opacity: 0; visibility: hidden; }
         }
-        #main-context {
+
+        /* Main content */
+        #main-content {
             display: none;
-            padding: 50px;
+            padding: 40px 20px;
             text-align: center;
             animation: fadeIn 2s ease forwards;
         }
@@ -73,27 +76,97 @@ lol<!DOCTYPE html>
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         nav {
           background: #14142b;
           padding: 15px;
           border-bottom: 4px solid #00f0ff;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
-        nav a {
+        nav img {
+            max-height: 80px;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background: none;
+            border: none;
+            color: #00f0ff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #1b1b33;
+            min-width: 180px;
+            border: 2px solid #00f0ff;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
             color: #00f0ff;
             text-decoration: none;
-            margin: 100px;
             font-weight: bold;
         }
+        .dropdown-content a:hover {
+            background: #00f0ff;
+            color: #0e0e20;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         h1 {
             font-size: 3em;
-            margin-bottom: 20px;
+            margin: 20px 0;
             color: #00f0ff;
         }
         p {
             font-size: 1.2em;
-            max-width: 600px;
-            margin: auto;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
         }
+
+        /* Countdown */
+        #countdown {
+            font-size: 2em;
+            margin: 30px 0;
+            color: #ff00b3;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .links {
+            margin: 30px 0;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background: #00f0ff;
+            color: #0e0e20;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .links a:hover {
+            background: #ff00b3;
+            color: white;
+        }
+
         footer {
             background-color: #111122;
             color: #ccc;
@@ -107,37 +180,96 @@ lol<!DOCTYPE html>
             margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.2 ease;
+            transition: color 0.2s ease;
         }
-        .fooster-content .socials a:hover {
+        .footer-content .socials a:hover {
             color: #ffffff;
         }
     </style>
 </head>
 <body>
+    <!-- Intro animation -->
     <div id="intro">
         <div id="orb"></div>
-        <div id="intro-text"></div>
+        <div id="introtext">Joyedforlife</div>
     </div>
+
+    <!-- Main Page -->
     <div id="main-content">
         <nav>
-            <img src="./joyedfordlife.png">
+            <img src="./joyedfordlife.png" alt="Joyedforlife Logo">
+
+            <div class="dropdown">
+                <button class="dropbtn">Menu ▼</button>
+                <div class="dropdown-content">
+                    <a href="unban.html">Unban Application</a>
+                    <a href="staff.html">Staff Team</a>
+                    <a href="connect.html">How to Connect</a>
+                </div>
+            </div>
         </nav>
+
         <h1>Welcome to Joyedforlife!</h1>
-        <p>This website is still a work in progress!</p>
+        <p>
+            Joyedforlife is a <strong>family-friendly Minecraft server</strong> created by <strong>Joyedlion</strong>.  
+            Our goal is to provide a fun, safe, and exciting environment for players of all ages to enjoy Minecraft together.  
+            Join our community, play with friends, and be part of something special!
+        </p>
+
+        <!-- Countdown -->
+        <div id="countdown">Loading countdown...</div>
+
+        <!-- Links -->
+        <div class="links">
+            <a href="https://discord.gg/YOUR-LINK" target="_blank">Discord</a>
+            <a href="https://youtube.com/@YOUR-CHANNEL" target="_blank">YouTube</a>
+            <a href="https://store.joyedforlife.xyz" target="_blank">Store</a>
+        </div>
     </div>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>Coded By <strong>Joyedlion</strong></p>
-        </div>
-        <div class="socials">
-            <a href="#" target="_blank">Youtube</a>
-            <a href="#" target="_blank">Twitch</a>
-            <a href="#" target="_blank">Discord</a>
-            <a href="#" target="_blank">Website</a>
+            <div class="socials">
+                <a href="https://discord.gg/YOUR-LINK" target="_blank">Discord</a>
+                <a href="https://youtube.com/@YOUR-CHANNEL" target="_blank">YouTube</a>
+                <a href="https://store.joyedforlife.xyz" target="_blank">Store</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Script for intro and countdown -->
+    <script>
+        // Show main content after intro
+        setTimeout(() => {
+            document.getElementById("main-content").style.display = "block";
+        }, 5000);
+
+        // Countdown Timer
+        const countdownEl = document.getElementById("countdown");
+        const launchDate = new Date("September 5, 2025 13:00:00 EST").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = launchDate - now;
+
+            if (diff <= 0) {
+                countdownEl.innerHTML = "Opening Soon…";
+                clearInterval(timer);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        const timer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
-
-
