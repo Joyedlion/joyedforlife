@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyedforlife Music</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e20;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #00f0ff;
+    }
+    #songName {
+      margin: 20px 0;
+      font-size: 1.5em;
+      color: #ff00b3;
+      font-weight: bold;
+    }
+    .controls button {
+      margin: 10px;
+      padding: 12px 24px;
+      background: #00f0ff;
+      color: #0e0e20;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .controls button:hover {
+      background: #ff00b3;
+      color: white;
+    }
+    footer {
+      background-color: #111122;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      border-top: 2px solid #00f0ff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎵 Joyedforlife Music Player 🎵</h1>
+  <div id="songName">No song playing</div>
+
+  <div class="controls">
+    <button onclick="startMusic()">Start</button>
+    <button onclick="stopMusic()">Stop</button>
+  </div>
+
+  <footer>
+    <p>Coded By <strong>Joyedlion</strong></p>
+  </footer>
+
+  <script>
+    // List of songs in ../audio/
+    const songs = [
+      { name: "Great Music", file: "../audio/greatmusic.mp3" },
+      { name: "Cool", file: "../audio/cool.mp3" },
+      { name: "Great", file: "../audio/great.mp3" },
+      { name: "Wonderful", file: "../audio/wonderful.mp3" }
+    ];
+
+    let audio = new Audio();
+    let isPlaying = false;
+
+    function getRandomSong() {
+      return songs[Math.floor(Math.random() * songs.length)];
+    }
+
+    function playRandomSong() {
+      if (!isPlaying) return; // stop if user pressed Stop
+      const song = getRandomSong();
+      document.getElementById("songName").innerText = "Now Playing: " + song.name;
+      audio.src = song.file;
+      audio.play();
+      audio.onended = playRandomSong; // when one finishes, play another
+    }
+
+    function startMusic() {
+      if (!isPlaying) {
+        isPlaying = true;
+        playRandomSong();
+      }
+    }
+
+    function stopMusic() {
+      isPlaying = false;
+      audio.pause();
+      audio.currentTime = 0;
+      document.getElementById("songName").innerText = "Stopped";
+    }
+  </script>
+
+</body>
+</html>
