@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joyedforlife | Plugin Developer</title>
-  <meta property="og:title" content="Joyedforlife Plugin Development" />
-  <meta property="og:description" content="Custom plugin development by Joyedlion." />
+  <title>Joyedlion | Content Creator</title>
+  <meta property="og:title" content="Joyedlion Creative Hub" />
+  <meta property="og:description" content="Explore the creative universe of Joyedlion." />
   <meta property="og:image" content="https://joyedforlife.xyz/joyedfordlife.png" />
   <meta property="og:url" content="https://joyedforlife.xyz" />
   <meta property="og:type" content="website" />
@@ -22,16 +22,64 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #0e0e20;
       color: white;
+      overflow-x: hidden;
     }
 
-    img {
+    nav {
+      background: #14142b;
+      padding: 15px;
+      border-bottom: 4px solid #00f0ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      max-height: 80px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #00f0ff;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #1b1b33;
+      min-width: 180px;
+      border: 2px solid #00f0ff;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      max-height: 100px;
+      padding: 12px;
+      color: #00f0ff;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* Intro animation */
+    .dropdown-content a:hover {
+      background: #00f0ff;
+      color: #0e0e20;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     #intro {
       position: fixed;
       top: 0;
@@ -90,65 +138,11 @@
       to { opacity: 1; }
     }
 
-    nav {
-      background: #14142b;
-      padding: 15px;
-      border-bottom: 4px solid #00f0ff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav img {
-      max-height: 80px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropbtn {
-      background: none;
-      border: none;
-      color: #00f0ff;
-      font-size: 1em;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 10px 15px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background: #1b1b33;
-      min-width: 180px;
-      border: 2px solid #00f0ff;
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 12px;
-      color: #00f0ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .dropdown-content a:hover {
-      background: #00f0ff;
-      color: #0e0e20;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       margin: 30px 0 15px;
       color: #00f0ff;
+      animation: slideIn 1s ease-out;
     }
 
     h2 {
@@ -166,6 +160,29 @@
 
     .section {
       margin-top: 60px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff00b3;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff00b3;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     footer {
@@ -177,20 +194,21 @@
       margin-top: 30px;
     }
 
-    .particle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #4A90E2;
-      opacity: 0.7;
-      border-radius: 2px;
-      animation: float 8s linear infinite;
+    input[type="email"] {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-200px) translateX(50px); }
-      100% { transform: translateY(0) translateX(-50px); }
+    button[type="submit"] {
+      padding: 10px 20px;
+      background: #00f0ff;
+      border: none;
+      border-radius: 4px;
+      color: #0e0e20;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -198,68 +216,74 @@
   <!-- Intro animation -->
   <div id="intro">
     <div id="orb"></div>
+    <div id="introtext">Welcome to Joyedlion’s World</div>
   </div>
 
   <!-- Main Page -->
   <div id="main-content">
     <nav>
-      <img src="./joyedfordlife.png" alt="Joyedforlife Logo" />
+      <img src="./joyedfordlife.png" alt="Joyedlion Logo" />
       <div class="dropdown">
         <button class="dropbtn">Menu ▼</button>
         <div class="dropdown-content">
           <a href="#about">About</a>
-          <a href="shop">Shop</a>
-          <a href="order">Order</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+          <a href="#featured">Featured</a>
+          <a href="#social">Social</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="#support">Support</a>
         </div>
       </div>
     </nav>
 
     <!-- Hero -->
-    <h1>Plugin Development by Joyedlion</h1>
+    <h1>Joyedlion Creates</h1>
     <p>
-      Need custom plugins? I specialize in creating efficient, reliable, and scalable Minecraft plugins tailored to your needs.
+      Sharing stories, visuals, and vibes from my creative universe. Explore my latest drops and join the journey.
     </p>
+    <a href="#featured" class="cta-button">Explore My Work</a>
 
-    <!-- About -->
-    <div class="section" id="about">
-      <h2>About Me</h2>
-      <p>
-        I'm Joyedlion — a passionate developer with experience building plugins for both public and private Minecraft servers. I focus on delivering high-quality, optimized code that enhances gameplay and user experience.
-      </p>
+    <!-- Featured Content -->
+    <div class="section" id="featured">
+      <h2>Latest Drops</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <div style="max-width: 300px;">
+          <img src="thumbnail1.jpg" alt="Video 1" style="width: 100%; border-radius: 8px;">
+          <p><strong>Behind the Scenes: My Creative Process</strong></p>
+        </div>
+        <div style="max-width: 300px;">
+          <img src="thumbnail2.jpg" alt="Video 2" style="width: 100%; border-radius: 8px;">
+          <p><strong>New Music Video: “Echoes”</strong></p>
+        </div>
+      </div>
     </div>
 
-    <!-- Services -->
-    <div class="section" id="services">
-      <h2>Services</h2>
-      <p>
-        I offer:
-        <ul style="list-style: none; padding: 0;">
-          <li>• Custom Plugin Development</li>
-          <li>• Plugin Optimization & Bug Fixing</li>
-          <li>• Plugin Setup & Configuration</li>
-          <li>• API Integration and Custom Events</li>
-        </ul>
-      </p>
+    <!-- Social Feed -->
+    <div class="section" id="social">
+      <h2>Follow the Journey</h2>
+      <p>Catch my latest posts and reels on Instagram and TikTok.</p>
+      <iframe src="https://www.instagram.com/p/yourpost/embed" frameborder="0" style="width:100%; max-width:400px; height:480px;"></iframe>
     </div>
 
-    <!-- Contact -->
-    <div class="section" id="contact">
-      <h2>Contact</h2>
-      <p>
-        Interested in working together? Reach out via email at <strong>joyed@joyedforlife.xyz</strong> or message me on Discord: <strong>Joyedlion</strong>.
-      </p>
+    <!-- Newsletter -->
+    <div class="section" id="newsletter">
+      <h2>Stay in the Loop</h2>
+      <p>Get exclusive updates, behind-the-scenes content, and early access to new drops.</p>
+      <form>
+        <input type="email" placeholder="Your email">
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
 
-    <!-- Decorative Particles -->
-    <div class="particle" style="top: 20%; left: 10%; width: 8px; height: 8px;"></div>
-    <div class="particle" style="top: 50%; left: 80%; width: 10px; height: 10px;"></div>
-    <div class="particle" style="top: 70%; left: 30%; width: 6px; height: 6px;"></div>
+    <!-- Support -->
+    <div class="section" id="support">
+      <h2>Support My Work</h2>
+      <p>Grab exclusive merch or become a patron to help fuel future creations and unlock behind-the-scenes content.</p>
+      <a href="https://patreon.com/joyedlion" class="cta-button">Join the Crew</a>
+    </div>
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Joyedlion | Plugin Development</p>
+      <p>© 2025 Joyedlion | Content Creator</p>
     </footer>
   </div>
 
