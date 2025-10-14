@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Redeem Your Minecraft Item</title>
+  <meta property="og:title" content="Redeem Your Minecraft Item">
+  <meta property="og:description" content="Click to copy your code and redeem at Minecraft.net/redeem">
+  <meta property="og:image" content="https://joyedforlife.xyz//joyedfordlife.png">
+  <meta property="og:url" content="https://joyedforlife.xyz/pages/redeem.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e20;
+      color: white;
+      margin: 0;
+    }
+
+    nav {
+      background: #14142b;
+      padding: 15px;
+      border-bottom: 4px solid #00f0ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav img {
+      max-height: 80px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #00f0ff;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #1b1b33;
+      min-width: 180px;
+      border: 2px solid #00f0ff;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      color: #00f0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .dropdown-content a:hover {
+      background: #00f0ff;
+      color: #0e0e20;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .connect-container {
+      background: #14142b;
+      margin: 50px auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00f0ff33;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+    .connect-container h2 {
+      color: #00f0ff;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .connect-container p {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+    .code-box {
+      background: #0e0e20;
+      border: 2px solid #00f0ff;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 15px auto;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00f0ff;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .code-box:hover {
+      background-color: #00f0ff;
+      color: #0e0e20;
+    }
+
+    footer {
+      background-color: #111122;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      border-top: 2px solid #00f0ff;
+      margin-top: 40px;
+    }
+    .footer-content .socials a {
+      color: #00f0ff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+    .footer-content .socials a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="../joyedfordlife.png" alt="Joyedforlife Logo">
+    <div class="dropdown">
+      <button class="dropbtn">Menu ▼</button>
+      <div class="dropdown-content">
+        <a href="../index.html">Home</a>
+        <a href="../connect.html">How to Connect</a>
+        <a href="../staff.html">Staff Team</a>
+        <a href="../commands.html">Commands</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="connect-container">
+    <h2>Your Minecraft Redeem Code</h2>
+    <p>Click the code below to copy it. Then redeem it at <a href="https://minecraft.net/redeem" target="_blank" style="color:#00f0ff;">minecraft.net/redeem</a>.</p>
+    <div class="code-box" onclick="copyCode()">f7k9m2x4b8q1r6t3w5z0n8v2c1</div>
+    <p id="copy-msg" style="color:#00f0ff; display:none;">Code copied to clipboard!</p>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>Coded By <strong>Joyedlion</strong></p>
+      <div class="socials">
+        <a href="https://dsc.gg/joyedlion" target="_blank">Discord</a>
+        <a href="https://youtube.com/@joyedlion" target="_blank">YouTube</a>
+        <a href="https://store.joyedforlife.xyz" target="_blank">Store</a>
+        <a href="https://map.joyedforlife.xyz:5967" target="_blank">Bluemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode() {
+      const code = "f7k9m2x4b8q1r6t3w5z0n8v2c1";
+      navigator.clipboard.writeText(code).then(() => {
+        document.getElementById("copy-msg").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("copy-msg").style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
