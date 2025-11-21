@@ -1,126 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joyedforlife Studios | Minecraft Datapacks, Setups & Texture Packs</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyedforlife Studios</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top, #2e003e, #15001c);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity .3s ease, transform .3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+            transform: translateY(-3px);
+        }
+
+        /* LOGO */
+        .logo {
+            margin-top: 40px;
+            width: 300px;
+            animation: floatIn 1.2s ease forwards;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* TITLE */
+        h1 {
+            font-size: 50px;
+            margin-top: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        p {
+            font-size: 20px;
+            width: 70%;
+            margin: 10px auto 30px auto;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        /* BUTTON */
+        .btn {
+            padding: 15px 35px;
+            font-size: 22px;
+            background: #c4451c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 1.1s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <img src="logo.png" alt="Joyedforlife Studios Logo" class="logo">
+    <!-- NAVIGATION -->
     <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#datapacks">Datapacks</a></li>
-        <li><a href="#setups">Setups</a></li>
-        <li><a href="#textures">Textures</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+        <a href="#info">Info</a>
+        <a href="#socials">Socials</a>
     </nav>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="fade-in">Welcome to <span>Joyedforlife Studios</span></h1>
-      <p class="fade-in-delay">Creators of professional Minecraft datapacks, server setups, and texture packs — built for players, creators, and dreamers.</p>
-      <a href="#datapacks" class="btn glow">Explore Our Work</a>
-    </div>
-  </section>
+    <!-- LOGO -->
+    <img src="logo.png" alt="Joyedforlife Studios Logo" class="logo">
 
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="about-content">
-      <img src="studio-showcase.jpg" alt="Joyedforlife Studio Showcase" class="about-image slide-in-left">
-      <div class="about-text slide-in-right">
-        <h2>Our Story</h2>
-        <p>At Joyedforlife Studios, we’re passionate about crafting immersive Minecraft experiences. 
-        From complex datapacks that change the game’s rules to polished server setups and 
-        stunning texture packs — every project is designed with detail and care. 
-        We believe in quality, creativity, and community-driven innovation.</p>
-        <p>Founded by a team of creators who love to push Minecraft’s limits, 
-        our mission is to bring fresh ideas to the game you love. Whether you’re a player, streamer, or server owner — Joyedforlife Studios is here to power your world.</p>
-      </div>
-    </div>
-  </section>
+    <!-- TITLE & DESCRIPTION -->
+    <h1>Joyedforlife Studios</h1>
+    <p>
+        Creating high-quality Minecraft plugins, mods, datapacks, resource packs,
+        and full custom server setups — all crafted with passion and creativity.
+    </p>
 
-  <!-- Datapacks -->
-  <section id="datapacks" class="section dark-bg">
-    <h2 class="section-title">Datapacks</h2>
-    <p class="section-desc">Innovative datapacks that add new mechanics, events, and adventures to your game.</p>
-    <div class="cards">
-      <div class="card zoom">
-        <img src="elementrix-pack.jpg" alt="Elementrix Datapack">
-        <h3>Elementrix</h3>
-        <p>Master elemental powers in a story-driven adventure that merges lore, combat, and exploration.</p>
-      </div>
-      <div class="card zoom">
-        <img src="goose-hunt.jpg" alt="Goose Hunt Datapack">
-        <h3>Goose Hunt</h3>
-        <p>Find and collect hidden geese across your world — a fun server collectible experience!</p>
-      </div>
-      <div class="card zoom">
-        <img src="bibleverse-pack.jpg" alt="BibleVerse Datapack">
-        <h3>BibleVerse</h3>
-        <p>A faith-inspired datapack that shares random Bible verses through chat commands and events.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Setups -->
-  <section id="setups" class="section gradient-bg">
-    <h2 class="section-title">Server Setups</h2>
-    <p class="section-desc">Ready-to-launch setups with economy systems, ranks, events, and high-quality configs.</p>
-    <div class="cards">
-      <div class="card zoom">
-        <img src="joyania-setup.jpg" alt="Joyania SMP Setup">
-        <h3>Joyania SMP</h3>
-        <p>A lifesteal-style SMP setup with dynamic events, ranks, and player progression features.</p>
-      </div>
-      <div class="card zoom">
-        <img src="bedwars-setup.jpg" alt="Bedwars Plugin">
-        <h3>Bedwars Plugin</h3>
-        <p>A modern Bedwars setup featuring custom generators, GUI menus, and team balancing — inspired by Hypixel.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Texture Packs -->
-  <section id="textures" class="section dark-bg">
-    <h2 class="section-title">Texture Packs</h2>
-    <p class="section-desc">High-quality textures that enhance gameplay visuals while staying true to Minecraft’s charm.</p>
-    <div class="cards">
-      <div class="card zoom">
-        <img src="joyedrealms-pack.jpg" alt="JoyedRealms Pack">
-        <h3>JoyedRealms Pack</h3>
-        <p>Origin Realms-inspired pack with polished custom models and smooth color gradients.</p>
-      </div>
-      <div class="card zoom">
-        <img src="elementrix-visuals.jpg" alt="Elementrix Visual Pack">
-        <h3>Elementrix Visuals</h3>
-        <p>Immersive texture pack designed for the Elementrix story, bringing the world to life.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
-    <p>Interested in custom work or collaborations? Let's build something amazing together.</p>
-    <a href="mailto:contact@joyedforlife.xyz" class="btn glow">Contact Us</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Joyedforlife Studios. All Rights Reserved.</p>
-    <p>Made with ❤️ by the Joyedforlife Team.</p>
-  </footer>
+    <!-- MAIN BUTTON -->
+    <button class="btn">VIEW ALL RESOURCES</button>
 
 </body>
 </html>
