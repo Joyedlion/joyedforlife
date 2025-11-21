@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Joyedforlife Studios</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #2e003e, #15001c);
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* PAGE HEADER */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 45px;
+        }
+
+        /* CONTACT CARD */
+        .contact-box {
+            background: #26003d;
+            width: 90%;
+            max-width: 550px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+            animation: fadeIn 0.6s ease;
+        }
+
+        .contact-box h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .contact-box p {
+            font-size: 16px;
+            opacity: 0.75;
+        }
+
+        /* FORM STYLING */
+        .contact-box input,
+        .contact-box textarea {
+            width: 90%;
+            padding: 14px;
+            margin: 12px 0;
+            background: #1a002b;
+            border: 2px solid #3f005f;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            resize: none;
+            transition: .25s ease;
+        }
+
+        .contact-box input:focus,
+        .contact-box textarea:focus {
+            border-color: #7c1eff;
+            box-shadow: 0 0 8px #7c1eff66;
+            outline: none;
+        }
+
+        /* SUBMIT BUTTON */
+        .contact-box button {
+            padding: 15px 35px;
+            font-size: 20px;
+            background: #c4451c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .contact-box button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* INFO LINKS */
+        .info-links {
+            margin-top: 15px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .info-links a {
+            color: #c48aff;
+            text-decoration: none;
+        }
+
+        .info-links a:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+    <a href="info.html">Info</a>
+    <a href="socials.html">Socials</a>
+</nav>
+
+<!-- HEADER -->
+<h1>Contact Joyedforlife Studios</h1>
+
+<!-- CONTACT FORM BOX -->
+<div class="contact-box">
+    <h2>Send a Message</h2>
+    <p>Have a question or request? Send a message and I’ll get back to you.</p>
+
+    <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="info-links">
+        <p>Prefer direct contact?</p>
+        <p>Email: <a href="mailto:joyedforlife@gmail.com">joyedforlife@gmail.com</a></p>
+        <p>Discord: <a href="#">YourDiscordNameHere</a></p>
+    </div>
+</div>
+
+</body>
+</html>
